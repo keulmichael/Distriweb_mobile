@@ -36,24 +36,18 @@ document.getElementById('pic').style.visibility="hidden";}
 
 function retourIndex() {
 document.getElementById('loader').innerHTML="<img src='http://www.distriweb.mobi/metro/montpellier/mobile/phonegap/loader.gif'>";
-document.getElementById('loader').style.visibility="visible";
 writediv(file("http://www.distriweb.mobi/metro/montpellier/mobile/phonegap/index.php"));
-document.getElementById('loader').style.visibility="hidden";
 document.getElementById('pic').style.visibility="hidden";}
 
 function retourCommencer() {
 document.getElementById('loader').innerHTML="<img src='http://www.distriweb.mobi/metro/montpellier/mobile/phonegap/loader.gif'>";
-document.getElementById('loader').style.visibility="visible";
 var tournee = document.getElementById("T").value;writediv(file("http://www.distriweb.mobi/metro/montpellier/mobile/phonegap/index.php?t_choix=" + tournee + "&action=commencer"));
-document.getElementById('loader').style.visibility="hidden";
 document.getElementById('open_camera_button').style.visibility="hidden";
 document.getElementById('pic').style.visibility="hidden";}
 
 function voir_point(num,tournee) {
 document.getElementById('loader').innerHTML="<img src='http://www.distriweb.mobi/metro/montpellier/mobile/phonegap/loader.gif'>";
-document.getElementById('loader').style.visibility="visible";
 writediv(file("http://www.distriweb.mobi/metro/montpellier/mobile/phonegap/mobile_record_point.php?num=" + num + "&tournee=" + tournee));
-document.getElementById('loader').style.visibility="hidden";
 document.getElementById('open_camera_button').style.visibility="visible";
 document.getElementById('pic').style.visibility="visible";}
 
