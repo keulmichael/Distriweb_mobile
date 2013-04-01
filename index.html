@@ -57,7 +57,7 @@ var Site = document.getElementById("Site").value;
 var T = document.getElementById("T").value;
 var retours = document.getElementById("quantite_retours").value;
 
-writediv(file('http://www.distriweb.mobi/metro/montpellier/mobile/phonegap/mobile_record_point_ok.php?num=' + num + '&Types=' + Types + '&Quantite_prevue=' + Quantite_prevue + '&t_choix=' + T + '&site=' + Site + '&retours=' + retours));}
+writediv(file('http://www.distriweb.mobi/metro/montpellier/mobile/phonegap/mobile_record_point_ok.php?num=' + num + '&Types=' + types + '&Quantite_prevue=' + Quantite_prevue + '&t_choix=' + T + '&site=' + Site + '&retours=' + retours));}
 
 function mobile_modif_donnees_reelle(num){
 var site = document.getElementById("site").value;
@@ -73,7 +73,7 @@ writediv(file('http://www.distriweb.mobi/metro/montpellier/mobile/phonegap/mobil
 }
 
 else {
-if (navigator.geolocation && types=='SNCF' || navigator.geolocation && types=='Vinci' || navigator.geolocation && types=='PRINT'){
+if (navigator.geolocation && types=='Galae' || navigator.geolocation && types=='Vinci'){
 navigator.geolocation.getCurrentPosition(function(position) {
 file('http://www.distriweb.mobi/metro/montpellier/mobile/phonegap/mobile_modif_donnees_reelle.php?num='+num+'&site='+site+'&Types='+types+'&nouvelle_quantite_reelle='+quantite_reelle+'&nouvelle_quantite_retours='+quantite_retours+'&nouvelle_horaire_debut='+horaire_debut+'&nouvelle_horaire_debut='+horaire_debut+'&PDA_Latitude='+position.coords.latitude+'&PDA_Longitude='+position.coords.longitude+'&presenceGD='+presenceGD),{maximumAge:0, timeout:0}})
 }
