@@ -50,8 +50,8 @@ document.getElementById('pic').style.visibility="hidden";}
 
 function voir_point(num,tournee) {
 document.getElementById('loader').innerHTML="<img src='http://www.distriweb.mobi/metro/montpellier/mobile/phonegap/loader.gif'>";
-writediv(file('http://www.distriweb.mobi/metro/montpellier/mobile/phonegap/mobile_record_point.php?num=' + num + '&tournee=' + tournee));
-document.getElementById('open_camera_button').style.visibility="visible";
+self.setTimeout("writediv(file('http://www.distriweb.mobi/metro/montpellier/mobile/phonegap/mobile_record_point.php?num=" + num + "&tournee=" + tournee + "'));", 3000) ;
+self.setTimeout("document.getElementById('open_camera_button').style.visibility='visible';", 3000) ;
 document.getElementById('pic').style.visibility="visible";}
 
 function affich_photo(num){writediv(file('http://www.distriweb.mobi/metro/montpellier/mobile/phonegap/affich_photo.php?num=' + num));}
