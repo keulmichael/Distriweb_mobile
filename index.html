@@ -20,48 +20,48 @@ xhr_object = new XMLHttpRequest();
 
 
 function rechargerPage() {
-document.getElementById('loader').innerHTML="<img src='http://www.distriweb.mobi/metro/paris/mobile/phonegap/loader.gif'>";
+document.getElementById('loader').innerHTML="<img src='http://www.distriweb.mobi/metro/bordeaux/mobile/phonegap/loader.gif'>";
 var tournee = document.getElementById("tournee").value;
-writediv(file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/index.php?t_choix=' + tournee + '&action=commencer&envoi=email'));
+writediv(file('http://www.distriweb.mobi/metro/bordeaux/mobile/phonegap/index.php?t_choix=' + tournee + '&action=commencer&envoi=email'));
 document.getElementById('pic').style.visibility="hidden";}
 
 function voir_tournee() {
-document.getElementById('loader').innerHTML="<img src='http://www.distriweb.mobi/metro/paris/mobile/phonegap/loader.gif'>";
+document.getElementById('loader').innerHTML="<img src='http://www.distriweb.mobi/metro/bordeaux/mobile/phonegap/loader.gif'>";
 var tournee = document.getElementById("tournee").value;
-writediv(file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/index.php?t_choix=' + tournee + '&action=voir'));
+writediv(file('http://www.distriweb.mobi/metro/bordeaux/mobile/phonegap/index.php?t_choix=' + tournee + '&action=voir'));
 document.getElementById('pic').style.visibility="hidden";}
 
 function chargement() {
-document.getElementById('loader').innerHTML="<img src='http://www.distriweb.mobi/metro/paris/mobile/phonegap/loader.gif'>";
-writediv(file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/chargement.php'));
+document.getElementById('loader').innerHTML="<img src='http://www.distriweb.mobi/metro/bordeaux/mobile/phonegap/loader.gif'>";
+writediv(file('http://www.distriweb.mobi/metro/bordeaux/mobile/phonegap/chargement.php'));
 document.getElementById('pic').style.visibility="hidden";}
 
 function retourIndex() {
-document.getElementById('loader').innerHTML="<img src='http://www.distriweb.mobi/metro/paris/mobile/phonegap/loader.gif'>";
-writediv(file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/index.php'));
+document.getElementById('loader').innerHTML="<img src='http://www.distriweb.mobi/metro/bordeaux/mobile/phonegap/loader.gif'>";
+writediv(file('http://www.distriweb.mobi/metro/bordeaux/mobile/phonegap/index.php'));
 document.getElementById('pic').style.visibility="hidden";}
 
 function retourCommencer() {
-document.getElementById('loader').innerHTML="<img src='http://www.distriweb.mobi/metro/paris/mobile/phonegap/loader.gif'>";
+document.getElementById('loader').innerHTML="<img src='http://www.distriweb.mobi/metro/bordeaux/mobile/phonegap/loader.gif'>";
 var tournee = document.getElementById("T").value;
-writediv(file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/index.php?t_choix=' + tournee + '&action=commencer'));
+writediv(file('http://www.distriweb.mobi/metro/bordeaux/mobile/phonegap/index.php?t_choix=' + tournee + '&action=commencer'));
 document.getElementById('open_camera_button').style.visibility="hidden";
 document.getElementById('pic').style.visibility="hidden";}
 
 function voir_point(num,tournee) {
-document.getElementById('loader').innerHTML="<img src='http://www.distriweb.mobi/metro/paris/mobile/phonegap/loader.gif'>";
-self.setTimeout("writediv(file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/mobile_record_point.php?num=" + num + "&tournee=" + tournee + "'));", 3000) ;
+document.getElementById('loader').innerHTML="<img src='http://www.distriweb.mobi/metro/bordeaux/mobile/phonegap/loader.gif'>";
+self.setTimeout("writediv(file('http://www.distriweb.mobi/metro/bordeaux/mobile/phonegap/mobile_record_point.php?num=" + num + "&tournee=" + tournee + "'));", 3000) ;
 self.setTimeout("document.getElementById('open_camera_button').style.visibility='visible';", 3000) ;
 document.getElementById('pic').style.visibility="visible";}
 
-function affich_photo(num){writediv(file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/affich_photo.php?num=' + num));}
+function affich_photo(num){writediv(file('http://www.distriweb.mobi/metro/bordeaux/mobile/phonegap/affich_photo.php?num=' + num));}
 
-function photo(num,Site){writediv(file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/photo.php?num=' + num + '&site=' + Site));}
+function photo(num,Site){writediv(file('http://www.distriweb.mobi/metro/bordeaux/mobile/phonegap/photo.php?num=' + num + '&site=' + Site));}
 
 function refuser(num,T) {
 var motif = document.getElementById("motif").value;
-file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/mobile_refuser_point_confirm.php?num=' + num + '&motif=' + motif);
-self.setTimeout("writediv(file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/index.php?t_choix=" + T + "&action=commencer'));", 3000) ;
+file('http://www.distriweb.mobi/metro/bordeaux/mobile/phonegap/mobile_refuser_point_confirm.php?num=' + num + '&motif=' + motif);
+self.setTimeout("writediv(file('http://www.distriweb.mobi/metro/bordeaux/mobile/phonegap/index.php?t_choix=" + T + "&action=commencer'));", 3000) ;
 document.getElementById('pic').style.visibility="hidden";
 document.getElementById('open_camera_button').style.visibility="hidden";}
 
@@ -72,7 +72,7 @@ var Site = document.getElementById("Site").value;
 var T = document.getElementById("T").value;
 var retours = document.getElementById("quantite_retours").value;
 
-writediv(file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/mobile_record_point_ok.php?num=' + num + '&Types=' + types + '&Quantite_prevue=' + Quantite_prevue + '&t_choix=' + T + '&site=' + Site + '&retours=' + retours));}
+writediv(file('http://www.distriweb.mobi/metro/bordeaux/mobile/phonegap/mobile_record_point_ok.php?num=' + num + '&Types=' + types + '&Quantite_prevue=' + Quantite_prevue + '&t_choix=' + T + '&site=' + Site + '&retours=' + retours));}
 
 function mobile_modif_donnees_reelle(num){
 var site = document.getElementById("site").value;
@@ -84,20 +84,20 @@ var horaire_debut = document.getElementById("horaire_debut").value;
 var T = document.getElementById("T").value;
 
 if (quantite_reelle==0 && types!='PRINT'){
-writediv(file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/mobile_refuser_point_confirm.php?t_choix=' + T +'&num='+num));
+writediv(file('http://www.distriweb.mobi/metro/bordeaux/mobile/phonegap/mobile_refuser_point_confirm.php?t_choix=' + T +'&num='+num));
 }
 
 else {
 if (navigator.geolocation && types=='Galae' || navigator.geolocation && types=='Vinci'){
 navigator.geolocation.getCurrentPosition(function(position) {
-file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/mobile_modif_donnees_reelle.php?num='+num+'&site='+site+'&Types='+types+'&nouvelle_quantite_reelle='+quantite_reelle+'&nouvelle_quantite_retours='+quantite_retours+'&nouvelle_horaire_debut='+horaire_debut+'&nouvelle_horaire_debut='+horaire_debut+'&PDA_Latitude='+position.coords.latitude+'&PDA_Longitude='+position.coords.longitude+'&presenceGD='+presenceGD),{maximumAge:0, timeout:0}})
+file('http://www.distriweb.mobi/metro/bordeaux/mobile/phonegap/mobile_modif_donnees_reelle.php?num='+num+'&site='+site+'&Types='+types+'&nouvelle_quantite_reelle='+quantite_reelle+'&nouvelle_quantite_retours='+quantite_retours+'&nouvelle_horaire_debut='+horaire_debut+'&nouvelle_horaire_debut='+horaire_debut+'&PDA_Latitude='+position.coords.latitude+'&PDA_Longitude='+position.coords.longitude+'&presenceGD='+presenceGD),{maximumAge:0, timeout:0}})
 }
 
 else{
-file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/mobile_modif_donnees_reelle.php?num='+num+'&site='+site+'&Types='+types+'&nouvelle_quantite_reelle='+quantite_reelle+'&nouvelle_quantite_retours='+quantite_retours+'&nouvelle_horaire_debut='+horaire_debut+'&nouvelle_horaire_debut='+horaire_debut+'&PDA_Latitude=&PDA_Longitude=&presenceGD='+presenceGD);
+file('http://www.distriweb.mobi/metro/bordeaux/mobile/phonegap/mobile_modif_donnees_reelle.php?num='+num+'&site='+site+'&Types='+types+'&nouvelle_quantite_reelle='+quantite_reelle+'&nouvelle_quantite_retours='+quantite_retours+'&nouvelle_horaire_debut='+horaire_debut+'&nouvelle_horaire_debut='+horaire_debut+'&PDA_Latitude=&PDA_Longitude=&presenceGD='+presenceGD);
 }
-document.getElementById('loader').innerHTML="<img src='http://www.distriweb.mobi/metro/paris/mobile/phonegap/loader.gif'>";
-self.setTimeout("writediv(file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/index.php?t_choix=" + T + "&action=commencer'));", 3000) ;
+document.getElementById('loader').innerHTML="<img src='http://www.distriweb.mobi/metro/bordeaux/mobile/phonegap/loader.gif'>";
+self.setTimeout("writediv(file('http://www.distriweb.mobi/metro/bordeaux/mobile/phonegap/index.php?t_choix=" + T + "&action=commencer'));", 3000) ;
 document.getElementById('pic').style.visibility="hidden";
 document.getElementById('open_camera_button').style.visibility="hidden";
 }
@@ -105,8 +105,8 @@ document.getElementById('open_camera_button').style.visibility="hidden";
 
 function MotifNonLivraison(num,T){
 var motif = document.getElementById("motif").value;
-file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/mobile_refuser_point_confirm.php?motif=' + motif +'&num='+num);
-writediv(file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/index.php?t_choix=' + T + '&action=commencer'));
+file('http://www.distriweb.mobi/metro/bordeaux/mobile/phonegap/mobile_refuser_point_confirm.php?motif=' + motif +'&num='+num);
+writediv(file('http://www.distriweb.mobi/metro/bordeaux/mobile/phonegap/index.php?t_choix=' + T + '&action=commencer'));
 }
 
 var pullfiles=function(src){
@@ -141,7 +141,7 @@ document.getElementById('open_camera_button').style.visibility="hidden";
         <link rel="stylesheet" href="css/camera.css" type="text/css">
 </head>
 
-<body onload="writediv(file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/index.php'));onLoad();bascule()">
+<body onload="writediv(file('http://www.distriweb.mobi/metro/bordeaux/mobile/phonegap/index.php'));onLoad();bascule()">
 </body>
 
 <div id='total'></div>
