@@ -144,7 +144,7 @@ function onCapture(e) {
 function onCaptureSuccess(imageData) {
     
 var num = document.getElementById("num").value;
-    var fichierupload = encodeURI("http://www.distriweb.mobi/mgp/paris/mobile/phonegap/photo.php?num="+num)
+    var fichierupload = encodeURI("http://www.distriweb.mobi/metro/paris/mobile/phonegap/photo.php?num="+num)
     var photo = getElement("pic");
     photo.style.display = "block";
     photo.src = imageData;
