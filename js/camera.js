@@ -22,7 +22,7 @@ function Settings() {
     }
     
     // Photo quality and editing options:
-    this.quality = 40;                                          // cameraOptions: quality
+    this.quality = 50;                                          // cameraOptions: quality
     this.targetWidth = 300;                                     // cameraOptions: targetWidth
     this.targetHeight = 300;                                    // cameraOptions: targetHeight
     this.allowEdit = true;                                      // cameraOptions: allowEdit
@@ -144,7 +144,7 @@ function onCapture(e) {
 function onCaptureSuccess(imageData) {
     
 var num = document.getElementById("num").value;
-    var fichierupload = encodeURI("http://www.distriweb.mobi/metro/lyon/mobile/phonegap/photo.php?num="+num)
+    var fichierupload = encodeURI("http://www.distriweb.mobi/metro/toulouse/mobile/phonegap/photo.php?num="+num)
     var photo = getElement("pic");
     photo.style.display = "block";
     photo.src = imageData;
