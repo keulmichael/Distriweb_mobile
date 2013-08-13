@@ -82,7 +82,6 @@ if (types=='GD'){var presenceGD = document.getElementById("presenceGD").value;}
 var quantite_retours = document.getElementById("quantite_retours").value;
 var horaire_debut = document.getElementById("horaire_debut").value;
 var T = document.getElementById("T").value;
-var codiff_retours = document.getElementById("quantite_retours_codiff").value;
 
 if (quantite_reelle==0 && types!='PRINT'){
 writediv(file('http://www.distriweb.mobi/wifi/paris/mobile/phonegap/mobile_refuser_point_confirm.php?t_choix=' + T +'&num='+num));
@@ -91,11 +90,11 @@ writediv(file('http://www.distriweb.mobi/wifi/paris/mobile/phonegap/mobile_refus
 else {
 if (navigator.geolocation && types=='Galae' || navigator.geolocation && types=='Vinci'){
 navigator.geolocation.getCurrentPosition(function(position) {
-file('http://www.distriweb.mobi/wifi/paris/mobile/phonegap/mobile_modif_donnees_reelle.php?num='+num+'&site='+site+'&Types='+types+'&nouvelle_quantite_reelle='+quantite_reelle+'&nouvelle_quantite_retours='+quantite_retours+'&nouvelle_horaire_debut='+horaire_debut+'&nouvelle_horaire_debut='+horaire_debut+'&PDA_Latitude='+position.coords.latitude+'&PDA_Longitude='+position.coords.longitude+'&presenceGD='+presenceGD+'&codiff_retours='+codiff_retours),{maximumAge:0, timeout:0}})
+file('http://www.distriweb.mobi/wifi/paris/mobile/phonegap/mobile_modif_donnees_reelle.php?num='+num+'&site='+site+'&Types='+types+'&nouvelle_quantite_reelle='+quantite_reelle+'&nouvelle_quantite_retours='+quantite_retours+'&nouvelle_horaire_debut='+horaire_debut+'&nouvelle_horaire_debut='+horaire_debut+'&PDA_Latitude='+position.coords.latitude+'&PDA_Longitude='+position.coords.longitude+'&presenceGD='+presenceGD),{maximumAge:0, timeout:0}})
 }
 
 else{
-file('http://www.distriweb.mobi/wifi/paris/mobile/phonegap/mobile_modif_donnees_reelle.php?num='+num+'&site='+site+'&Types='+types+'&nouvelle_quantite_reelle='+quantite_reelle+'&nouvelle_quantite_retours='+quantite_retours+'&nouvelle_horaire_debut='+horaire_debut+'&nouvelle_horaire_debut='+horaire_debut+'&PDA_Latitude=&PDA_Longitude=&presenceGD='+presenceGD+'&codiff_retours='+codiff_retours);
+file('http://www.distriweb.mobi/wifi/paris/mobile/phonegap/mobile_modif_donnees_reelle.php?num='+num+'&site='+site+'&Types='+types+'&nouvelle_quantite_reelle='+quantite_reelle+'&nouvelle_quantite_retours='+quantite_retours+'&nouvelle_horaire_debut='+horaire_debut+'&nouvelle_horaire_debut='+horaire_debut+'&PDA_Latitude=&PDA_Longitude=&presenceGD='+presenceGD);
 }
 document.getElementById('loader').innerHTML="<img src='http://www.distriweb.mobi/wifi/paris/mobile/phonegap/loader.gif'>";
 self.setTimeout("writediv(file('http://www.distriweb.mobi/wifi/paris/mobile/phonegap/index.php?t_choix=" + T + "&action=commencer'));", 3000) ;
