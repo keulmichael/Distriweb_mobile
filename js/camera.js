@@ -27,9 +27,9 @@ function Settings() {
     var photoWidth = document.getElementById("photoWidth").value;
     
     // Photo quality and editing options:
-    this.quality = 50;                                          // cameraOptions: quality
-    this.targetWidth = 300;                                     // cameraOptions: targetWidth
-    this.targetHeight = 300;                                    // cameraOptions: targetHeight
+    this.quality = photoquality;                                          // cameraOptions: quality
+    this.targetWidth = photoWidth;                                     // cameraOptions: targetWidth
+    this.targetHeight = photoHeight;                                    // cameraOptions: targetHeight
     this.allowEdit = true;                                      // cameraOptions: allowEdit
     this.correctOrientation = true;                             // cameraOptions: correctOrientation
     
