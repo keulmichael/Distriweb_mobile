@@ -21,13 +21,11 @@ function Settings() {
         this.mediaType = Camera.MediaType.PICTURE;                  // cameraOptions: mediaType
     }
     
-
-
-    
+   
     // Photo quality and editing options:
     this.quality = 50;                                          // cameraOptions: quality
-    this.targetWidth = 500;                                     // cameraOptions: targetWidth
-    this.targetHeight = 500;                                    // cameraOptions: targetHeight
+    this.targetWidth = 300;                                     // cameraOptions: targetWidth
+    this.targetHeight = 300;                                    // cameraOptions: targetHeight
     this.allowEdit = true;                                      // cameraOptions: allowEdit
     this.correctOrientation = true;                             // cameraOptions: correctOrientation
     
@@ -122,13 +120,14 @@ function onCapture(e) {
             return;
     }
     
-    navigator.camera.getPicture(onCaptureSuccess, onCaptureError, { quality : settings.quality, 
+
+    navigator.camera.getPicture(onCaptureSuccess, onCaptureError, { quality : document.getElementById("photoquality").value, 
                                                                     destinationType : settings.destinationType, 
                                                                     sourceType : settings.sourceType, 
                                                                     allowEdit : settings.allowEdit, 
                                                                     encodingType : settings.encodingType,
-                                                                    targetWidth : settings.targetWidth,
-                                                                    targetHeight : settings.targetHeight,
+                                                                    targetWidth : document.getElementById("photoWidth").value,
+                                                                    targetHeight : document.getElementById("photoHeight").value,
                                                                     mediaType: settings.mediaType,
                                                                     saveToPhotoAlbum : settings.saveToPhotoAlbum,
                                                                     correctOrientation: settings.correctOrientation,
