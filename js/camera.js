@@ -21,10 +21,15 @@ function Settings() {
         this.mediaType = Camera.MediaType.PICTURE;                  // cameraOptions: mediaType
     }
     
+
+    var photoquality = document.getElementById("photoquality").value;
+    var photoHeight = document.getElementById("photoHeight").value;
+    var photoWidth = document.getElementById("photoWidth").value;
+    
     // Photo quality and editing options:
-    this.quality = 150;                                          // cameraOptions: quality
-    this.targetWidth = 1000;                                     // cameraOptions: targetWidth
-    this.targetHeight = 1000;                                    // cameraOptions: targetHeight
+    this.quality = photoquality;                                          // cameraOptions: quality
+    this.targetWidth = photoHeight;                                     // cameraOptions: targetWidth
+    this.targetHeight = photoWidth;                                    // cameraOptions: targetHeight
     this.allowEdit = true;                                      // cameraOptions: allowEdit
     this.correctOrientation = true;                             // cameraOptions: correctOrientation
     
