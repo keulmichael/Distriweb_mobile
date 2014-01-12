@@ -22,14 +22,12 @@ function Settings() {
     }
     
 
-    var photoquality = document.getElementById("photoquality").value;
-    var photoHeight = document.getElementById("photoHeight").value;
-    var photoWidth = document.getElementById("photoWidth").value;
+
     
     // Photo quality and editing options:
-    this.quality = photoquality;                                          // cameraOptions: quality
-    this.targetWidth = photoWidth;                                     // cameraOptions: targetWidth
-    this.targetHeight = photoHeight;                                    // cameraOptions: targetHeight
+    this.quality = 50;                                          // cameraOptions: quality
+    this.targetWidth = 500;                                     // cameraOptions: targetWidth
+    this.targetHeight = 500;                                    // cameraOptions: targetHeight
     this.allowEdit = true;                                      // cameraOptions: allowEdit
     this.correctOrientation = true;                             // cameraOptions: correctOrientation
     
