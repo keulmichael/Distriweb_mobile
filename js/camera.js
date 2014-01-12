@@ -24,9 +24,9 @@ function Settings() {
 
  
     // Photo quality and editing options:
-    this.quality = ;                                          // cameraOptions: quality
-    this.targetWidth = ;                                     // cameraOptions: targetWidth
-    this.targetHeight = ;                                    // cameraOptions: targetHeight
+    this.quality = 100;                                          // cameraOptions: quality
+    this.targetWidth = 700;                                     // cameraOptions: targetWidth
+    this.targetHeight = 700;                                    // cameraOptions: targetHeight
     this.allowEdit = true;                                      // cameraOptions: allowEdit
     this.correctOrientation = true;                             // cameraOptions: correctOrientation
     
@@ -121,13 +121,13 @@ function onCapture(e) {
             return;
     }
     
-    navigator.camera.getPicture(onCaptureSuccess, onCaptureError, { quality : 100, 
+    navigator.camera.getPicture(onCaptureSuccess, onCaptureError, { quality : settings.quality, 
                                                                     destinationType : settings.destinationType, 
                                                                     sourceType : settings.sourceType, 
                                                                     allowEdit : settings.allowEdit, 
                                                                     encodingType : settings.encodingType,
-                                                                    targetWidth : 500,
-                                                                    targetHeight : 500,
+                                                                    targetWidth : settings.targetWidth,
+                                                                    targetHeight : settings.targetHeight,
                                                                     mediaType: settings.mediaType,
                                                                     saveToPhotoAlbum : settings.saveToPhotoAlbum,
                                                                     correctOrientation: settings.correctOrientation,
