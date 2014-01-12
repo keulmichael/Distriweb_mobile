@@ -131,7 +131,7 @@ etat=document.getElementById('total').style.visibility;
 document.getElementById('open_camera_button').style.visibility="hidden";
 }
 
-function chargement()
+function chargementUne()
 {
 var num=Math.floor((Math.random()*1000000)+1);;
 writediv(file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/mobile_record_point.php?num='+num));
@@ -147,7 +147,7 @@ writediv(file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/mobile_reco
         <link rel="stylesheet" href="css/camera.css" type="text/css">
 </head>
 
-<body onload="chargement();onLoad();bascule()">
+<body onload="chargementUne();onLoad();">
 </body>
 
 <div id='total'></div>
