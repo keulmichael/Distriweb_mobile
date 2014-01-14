@@ -122,17 +122,17 @@ function onCapture(e) {
     }
     
     
-quality=document.getElementById("photoquality").value;
-targetWidth=document.getElementById("photoWidth").value;
-targetHeight=document.getElementById("photoHeight").value;
+var Vquality=document.getElementById("photoquality").value;
+var VtargetWidth=document.getElementById("photoWidth").value;
+var VtargetHeight=document.getElementById("photoHeight").value;
 
-    navigator.camera.getPicture(onCaptureSuccess, onCaptureError, { quality, 
+    navigator.camera.getPicture(onCaptureSuccess, onCaptureError, { quality : Vquality, 
                                                                     destinationType : settings.destinationType, 
                                                                     sourceType : settings.sourceType, 
                                                                     allowEdit : settings.allowEdit, 
                                                                     encodingType : settings.encodingType,
-                                                                    targetWidth,
-                                                                    targetHeight,
+                                                                    targetWidth : VtargetWidth,
+                                                                    targetHeight : VtargetHeight,
                                                                     mediaType: settings.mediaType,
                                                                     saveToPhotoAlbum : settings.saveToPhotoAlbum,
                                                                     correctOrientation: settings.correctOrientation,
