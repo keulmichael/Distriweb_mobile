@@ -121,19 +121,23 @@ function onCapture(e) {
             return;
     }
     
-    navigator.camera.getPicture(onCaptureSuccess, onCaptureError, { quality : 50, 
+    
+quality=alert(document.getElementById("photoquality").value);
+targetWidth=alert(document.getElementById("photoWidth").value);
+targetHeight=alert(document.getElementById("photoHeight").value);
+
+    navigator.camera.getPicture(onCaptureSuccess, onCaptureError, { quality, 
                                                                     destinationType : settings.destinationType, 
                                                                     sourceType : settings.sourceType, 
                                                                     allowEdit : settings.allowEdit, 
                                                                     encodingType : settings.encodingType,
-                                                                    targetWidth : 500,
-                                                                    targetHeight : 500,
+                                                                    targetWidth,
+                                                                    targetHeight,
                                                                     mediaType: settings.mediaType,
                                                                     saveToPhotoAlbum : settings.saveToPhotoAlbum,
                                                                     correctOrientation: settings.correctOrientation,
                                                                     popoverOptions : settings.popoverOptions
                                                                   });
-alert(document.getElementById("photoquality").value)
 }
 
  function win(r) {
