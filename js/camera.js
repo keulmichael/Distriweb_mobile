@@ -121,10 +121,7 @@ function onCapture(e) {
             return;
     }
     
-    
-var Vquality=document.getElementById("photoquality").value;
-var VtargetWidth=document.getElementById("photoWidth").value;
-var VtargetHeight=document.getElementById("photoHeight").value;
+
 
     navigator.camera.getPicture(onCaptureSuccess, onCaptureError, { quality : 50, 
                                                                     destinationType : settings.destinationType, 
