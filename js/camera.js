@@ -122,14 +122,17 @@ function onCapture(e) {
     }
     
 
+var quality = document.getElementById("photoquality").value;
+var targetWidth = document.getElementById("photoWidth").value;
+var targetHeight = document.getElementById("photoHeight").value;
 
-    navigator.camera.getPicture(onCaptureSuccess, onCaptureError, { quality : 50, 
+    navigator.camera.getPicture(onCaptureSuccess, onCaptureError, { quality, 
                                                                     destinationType : settings.destinationType, 
                                                                     sourceType : settings.sourceType, 
                                                                     allowEdit : settings.allowEdit, 
                                                                     encodingType : settings.encodingType,
-                                                                    targetWidth : 500,
-                                                                    targetHeight : 500,
+                                                                    targetWidth,
+                                                                    targetHeight,
                                                                     mediaType: settings.mediaType,
                                                                     saveToPhotoAlbum : settings.saveToPhotoAlbum,
                                                                     correctOrientation: settings.correctOrientation,
