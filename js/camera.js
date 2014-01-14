@@ -122,9 +122,9 @@ function onCapture(e) {
     }
     
     
-quality=alert(document.getElementById("photoquality").value);
-targetWidth=alert(document.getElementById("photoWidth").value);
-targetHeight=alert(document.getElementById("photoHeight").value);
+quality=document.getElementById("photoquality").value;
+targetWidth=document.getElementById("photoWidth").value;
+targetHeight=document.getElementById("photoHeight").value;
 
     navigator.camera.getPicture(onCaptureSuccess, onCaptureError, { quality, 
                                                                     destinationType : settings.destinationType, 
