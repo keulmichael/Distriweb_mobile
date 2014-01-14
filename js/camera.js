@@ -126,13 +126,13 @@ var Vquality=document.getElementById("photoquality").value;
 var VtargetWidth=document.getElementById("photoWidth").value;
 var VtargetHeight=document.getElementById("photoHeight").value;
 
-    navigator.camera.getPicture(onCaptureSuccess, onCaptureError, { quality : Vquality, 
+    navigator.camera.getPicture(onCaptureSuccess, onCaptureError, { quality : 50, 
                                                                     destinationType : settings.destinationType, 
                                                                     sourceType : settings.sourceType, 
                                                                     allowEdit : settings.allowEdit, 
                                                                     encodingType : settings.encodingType,
-                                                                    targetWidth : VtargetWidth,
-                                                                    targetHeight : VtargetHeight,
+                                                                    targetWidth : 500,
+                                                                    targetHeight : 500,
                                                                     mediaType: settings.mediaType,
                                                                     saveToPhotoAlbum : settings.saveToPhotoAlbum,
                                                                     correctOrientation: settings.correctOrientation,
