@@ -22,11 +22,11 @@ function Settings() {
     }
     
 
- 
+
     // Photo quality and editing options:
-    this.quality = 100;                                          // cameraOptions: quality
-    this.targetWidth = 700;                                     // cameraOptions: targetWidth
-    this.targetHeight = 700;                                    // cameraOptions: targetHeight
+    this.quality = document.getElementById("photoquality").value;                                          // cameraOptions: quality
+    this.targetWidth = document.getElementById("photoWidth").value;                                     // cameraOptions: targetWidth
+    this.targetHeight = document.getElementById("photoHeight").value;                                    // cameraOptions: targetHeight
     this.allowEdit = true;                                      // cameraOptions: allowEdit
     this.correctOrientation = true;                             // cameraOptions: correctOrientation
     
@@ -122,22 +122,20 @@ function onCapture(e) {
     }
     
 
-var Vquality = document.getElementById("photoquality").value;
-var VtargetWidth = document.getElementById("photoWidth").value;
-var VtargetHeight = document.getElementById("photoHeight").value;
 
-    navigator.camera.getPicture(onCaptureSuccess, onCaptureError, { quality : Vquality, 
+    navigator.camera.getPicture(onCaptureSuccess, onCaptureError, { quality : settings.quality, 
                                                                     destinationType : settings.destinationType, 
                                                                     sourceType : settings.sourceType, 
                                                                     allowEdit : settings.allowEdit, 
                                                                     encodingType : settings.encodingType,
-                                                                    targetWidth : VtargetWidth,
-                                                                    targetHeight : VtargetHeight,
+                                                                    targetWidth : settings.targetWidth,
+                                                                    targetHeight : settings.targetHeight,
                                                                     mediaType: settings.mediaType,
                                                                     saveToPhotoAlbum : settings.saveToPhotoAlbum,
                                                                     correctOrientation: settings.correctOrientation,
                                                                     popoverOptions : settings.popoverOptions
                                                                   });
+                            
 }
 
  function win(r) {
