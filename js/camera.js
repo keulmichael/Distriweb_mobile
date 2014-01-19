@@ -136,7 +136,7 @@ function onCapture(e) {
                                                                     popoverOptions : settings.popoverOptions
                                                                   });
 								  
-alert("camera :"+ document.getElementById("photoquality").value);
+alert("camera :"+ document.getElementById("photoHeight").value);
                             
 }
 
