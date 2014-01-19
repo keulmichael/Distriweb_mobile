@@ -123,7 +123,7 @@ function onCapture(e) {
     
 
 
-    navigator.camera.getPicture(onCaptureSuccess, onCaptureError, { quality : settings.quality, 
+    navigator.camera.getPicture(onCaptureSuccess, onCaptureError, { quality : document.getElementById("photoquality").value, 
                                                                     destinationType : settings.destinationType, 
                                                                     sourceType : settings.sourceType, 
                                                                     allowEdit : settings.allowEdit, 
@@ -135,9 +135,7 @@ function onCapture(e) {
                                                                     correctOrientation: settings.correctOrientation,
                                                                     popoverOptions : settings.popoverOptions
                                                                   });
-								  
-alert("camera_getPicture :"+ document.getElementById("photoHeight").value);
-alert("camera_settings :"+ settings.targetHeight);                            
+								                         
 }
 
  function win(r) {
@@ -151,7 +149,8 @@ alert("camera_settings :"+ settings.targetHeight);
 function onCaptureSuccess(imageData) {
     
 var num = document.getElementById("num").value;
-    var fichierupload = encodeURI("http://www.distriweb.mobi/metro/paris/mobile/phonegap/photo.php?num="+num)
+var dossier = document.getElementById("dossier").value;
+    var fichierupload = encodeURI("http://www.distriweb.mobi/metro/paris/mobile/phonegap/photo.php?num="+num+"&dossier="+dossier)
     var photo = getElement("pic");
     photo.style.display = "block";
     photo.src = imageData;
