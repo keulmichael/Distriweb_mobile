@@ -137,7 +137,7 @@ function onCapture(e) {
                                                                   });
 								  
 alert("camera :"+ document.getElementById("photoHeight").value);
-                            
+alert("camera :"+ targetHeight);                            
 }
 
  function win(r) {
