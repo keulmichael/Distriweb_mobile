@@ -135,6 +135,8 @@ function onCapture(e) {
                                                                     correctOrientation: settings.correctOrientation,
                                                                     popoverOptions : settings.popoverOptions
                                                                   });
+								  
+alert("camera :"+ document.getElementById("photoquality").value)
                             
 }
 
