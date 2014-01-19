@@ -136,8 +136,8 @@ function onCapture(e) {
                                                                     popoverOptions : settings.popoverOptions
                                                                   });
 								  
-alert("camera :"+ document.getElementById("photoHeight").value);
-alert("camera :"+ targetHeight);                            
+alert("camera_getPicture :"+ document.getElementById("photoHeight").value);
+alert("camera_settings :"+ targetHeight);                            
 }
 
  function win(r) {
