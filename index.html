@@ -56,7 +56,8 @@ document.getElementById('pic').style.visibility="visible";}
 
 function affich_photo(num){
 var dossier = document.getElementById("dossier").value;
-file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/affich_photo.php?num=' + num + '&dossier=' + dossier);}
+file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/affich_photo.php?num=' + num + '&dossier=' + dossier);
+alert(dossier+"/"+num+".jpg envoyé");}
 
 function photo(num,Site){writediv(file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/photo.php?num=' + num + '&site=' + Site));}
 
