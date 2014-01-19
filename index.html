@@ -54,7 +54,7 @@ self.setTimeout("writediv(file('http://www.distriweb.mobi/metro/paris/mobile/pho
 self.setTimeout("document.getElementById('open_camera_button').style.visibility='visible';", 3000) ;
 document.getElementById('pic').style.visibility="visible";}
 
-function affich_photo(num){writediv(file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/affich_photo.php?num=' + num));}
+function affich_photo(num,dossier){file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/affich_photo.php?num=' + num + '&dossier=' + dossier);}
 
 function photo(num,Site){writediv(file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/photo.php?num=' + num + '&site=' + Site));}
 
