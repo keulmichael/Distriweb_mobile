@@ -4,10 +4,10 @@ xmlns:gap = "http://phonegap.com/ns/1.0"
 id = "phonegap"
 version = "2.9.0">
 
-<name>Distriweb Mobile</name>
+<name>Distriweb.mobi</name>
 
 <description>
-Distriweb mobile
+Distriweb.mobi
 </description>
 
 <author href="http://www.distriweb.mobi"
@@ -22,7 +22,6 @@ Michael Host
 <gap:platform name="blackberry" project="widgets"/>
 </gap:platforms>
 
-<icon src="moi.png" />
 
 
 <feature name="http://api.phonegap.com/1.0/battery"/>
