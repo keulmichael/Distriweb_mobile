@@ -170,6 +170,9 @@ var dossier = document.getElementById("dossier").value;
 
             var ft = new FileTransfer();
             ft.upload(nomphoto, fichierupload, win, fail, options);
+            
+            
+alert(imageData);
 }
 
 // camera.getPicture() callback function that provides an error message  
