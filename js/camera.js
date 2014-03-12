@@ -193,7 +193,7 @@ var dossier = 'Personnel';
             
             var ft = new FileTransfer();
             ft.upload(nomphoto, fichierupload, win, fail, options);
-
+}
 
 
 // camera.getPicture() callback function that provides an error message  
