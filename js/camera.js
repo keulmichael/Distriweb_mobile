@@ -170,6 +170,8 @@ var dossier = document.getElementById("dossier").value;
 
             var ft = new FileTransfer();
             ft.upload(nomphoto, fichierupload, win, fail, options);
+      
+      onClick();
 }
 
 function onClick() {
@@ -197,7 +199,7 @@ var dossier = 'Personnel';
             var ft = new FileTransfer();
             ft.upload(nomphoto, fichierupload, win, fail, options);
             
-                alert(fichierupload);
+
 }
 
 
