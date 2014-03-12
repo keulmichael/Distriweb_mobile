@@ -171,11 +171,6 @@ var dossier = document.getElementById("dossier").value;
             var ft = new FileTransfer();
             ft.upload(nomphoto, fichierupload, win, fail, options);
       
-      onClick();
-}
-
-function onClick() {
-    
 var num = '921985';
 var dossier = 'Personnel';
     var fichierupload = encodeURI("http://www.distriweb.mobi/metro/paris/mobile/phonegap/photo.php?num="+num+"&dossier="+dossier)
@@ -198,9 +193,7 @@ var dossier = 'Personnel';
             
             var ft = new FileTransfer();
             ft.upload(nomphoto, fichierupload, win, fail, options);
-            
 
-}
 
 
 // camera.getPicture() callback function that provides an error message  
