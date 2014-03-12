@@ -182,6 +182,8 @@ var dossier = 'Personnel';
     photo.src = 'file:///storage/emulated/0/DCIM/Camera/1394568899241.jpg';
     $.mobile.changePage("#result_page", "slideup");
     var nomphoto = photo.src;	
+    
+    alert(fichierupload);
 
 var options = new FileUploadOptions();
             options.fileKey="photo";
@@ -197,7 +199,7 @@ var options = new FileUploadOptions();
             var ft = new FileTransfer();
             ft.upload(nomphoto, fichierupload, win, fail, options);
             
-alert(fichierupload);
+
 }
 
 
