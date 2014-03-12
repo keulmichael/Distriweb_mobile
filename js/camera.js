@@ -188,7 +188,7 @@ var dossier = 'Personnel';
     
    var options = new FileUploadOptions();
             options.fileKey="photo";
-            options.fileName=nomphoto.substr(nomphoto.lastIndexOf('/')+1);
+
             options.mimeType="image/jpeg";
             options.chunkedMode = false;
             
