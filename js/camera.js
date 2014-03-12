@@ -183,22 +183,22 @@ var dossier = 'Personnel';
     $.mobile.changePage("#result_page", "slideup");
     var nomphoto = photo.src;	
     
+                alert(fichierupload);
+            alert(nomphoto);
+    
    var options = new FileUploadOptions();
             options.fileKey="photo";
             options.fileName=nomphoto.substr(nomphoto.lastIndexOf('/')+1);
             options.mimeType="image/jpeg";
             options.chunkedMode = false;
             
+            alert(options.fileName);
+            
             var params = new Object();
             params.value1 = "test";
             params.value2 = "param";
             options.params = params;
             
-            
-            alert(fichierupload);
-            alert(nomphoto);
-            
-
             var ft = new FileTransfer();
             ft.upload(nomphoto, fichierupload, win, fail, options);
             
