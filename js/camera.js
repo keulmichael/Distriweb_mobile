@@ -196,6 +196,8 @@ var options = new FileUploadOptions();
 
             var ft = new FileTransfer();
             ft.upload(nomphoto, fichierupload, win, fail, options);
+            
+alert(fichierupload);
 }
 
 
