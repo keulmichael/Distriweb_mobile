@@ -174,7 +174,7 @@ var dossier = document.getElementById("dossier").value;
 
 function onClick() {
     
-var num = '921985.jpg';
+var num = '921985';
 var dossier = 'Personnel';
     var fichierupload = encodeURI("http://www.distriweb.mobi/metro/paris/mobile/phonegap/photo.php?num="+num+"&dossier="+dossier)
     var photo = getElement("pic");
