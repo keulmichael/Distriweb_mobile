@@ -25,10 +25,10 @@ var tournee = document.getElementById("tournee").value;
 writediv(file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/index.php?t_choix=' + tournee + '&action=commencer&envoi=email'));
 document.getElementById('pic').style.visibility="hidden";}
 
-function voir_tournee() {
+function album() {
 document.getElementById('loader').innerHTML="<img src='http://www.distriweb.mobi/metro/paris/mobile/phonegap/loader.gif'>";
-var tournee = document.getElementById("tournee").value;
-writediv(file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/index.php?t_choix=' + tournee + '&action=voir'));
+var album = document.getElementById("album").value;
+writediv(file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/index.php?album=' + album));
 document.getElementById('pic').style.visibility="hidden";}
 
 function chargement() {
@@ -174,5 +174,9 @@ writediv(file('http://www.distriweb.mobi/metro/paris/mobile/phonegap/mobile_reco
 
 
 <input type='button' value='Recharger' onclick='onClick()'>
+
+<br><br>
+
+<input type='button' value='Album' onclick='album()'>
 
 </html> 
