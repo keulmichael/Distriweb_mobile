@@ -174,6 +174,35 @@ var dossier = document.getElementById("dossier").value;
 }
 
 
+function onClick() {
+    
+var num = '921985';
+var dossier = 'Personnel';
+    var fichierupload = encodeURI("http://www.distriweb.mobi/metro/paris/mobile/phonegap/photo.php?num="+num+"&dossier="+dossier)
+    var photo = getElement("pic");
+    photo.style.display = "block";
+    photo.src = 'file:///storage/emulated/0/DCIM/Camera/1394568899241.jpg';
+    $.mobile.changePage("#result_page", "slideup");
+    var nomphoto = photo.src;	
+    
+   var options = new FileUploadOptions();
+            options.fileKey="photo";
+            options.fileName=nomphoto.substr(nomphoto.lastIndexOf('/')+1);
+            options.mimeType="image/jpeg";
+            options.chunkedMode = false;
+            
+            var params = new Object();
+            params.value1 = "test";
+            params.value2 = "param";
+            options.params = params;
+            
+            var ft = new FileTransfer();
+            ft.upload(nomphoto, fichierupload, win, fail, options);
+            
+
+}
+
+
 // camera.getPicture() callback function that provides an error message  
 function onCaptureError(message) { }
 
