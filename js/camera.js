@@ -150,7 +150,7 @@ function onCaptureSuccess(imageData) {
     
 var num = document.getElementById("num").value;
 var dossier = document.getElementById("dossier").value;
-    var fichierupload = encodeURI("http://www.distriweb.mobi/metro/paris/mobile/phonegap/photo.php?num="+num+"&dossier="+dossier);
+    var fichierupload = encodeURI("http://www.distriweb.mobi/metro/paris/mobile/phonegap/photo.php?imageData="+imageData+"num="+num+"&dossier="+dossier);
     var photo = getElement("pic");
     photo.style.display = "block";
     photo.src = imageData;
@@ -174,10 +174,11 @@ var dossier = document.getElementById("dossier").value;
 }
 
 
-function onClick(imageData) {
+function onClick() {
     
 var num = document.getElementById("num").value;
 var dossier = document.getElementById("dossier").value;
+var imageData = document.getElementById("imageData").value;
     var fichierupload = encodeURI("http://www.distriweb.mobi/metro/paris/mobile/phonegap/photo.php?num="+num+"&dossier="+dossier)
     var photo = getElement("pic");
     photo.style.display = "block";
