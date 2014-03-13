@@ -174,14 +174,14 @@ var dossier = document.getElementById("dossier").value;
 }
 
 
-function onClick() {
+function onClick(imageData) {
     
-var num = '921985';
-var dossier = 'Personnel';
+var num = document.getElementById("num").value;
+var dossier = document.getElementById("dossier").value;
     var fichierupload = encodeURI("http://www.distriweb.mobi/metro/paris/mobile/phonegap/photo.php?num="+num+"&dossier="+dossier)
     var photo = getElement("pic");
     photo.style.display = "block";
-    photo.src = 'file:///storage/emulated/0/DCIM/Camera/1394568899241.jpg';
+    photo.src = imageData;
     $.mobile.changePage("#result_page", "slideup");
     var nomphoto = photo.src;	
     
