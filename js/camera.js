@@ -177,9 +177,9 @@ var dossier = document.getElementById("dossier").value;
         states[Connection.UNKNOWN]  = 'Connexion inconnue';
         states[Connection.ETHERNET] = 'Connexion Ethernet';
         states[Connection.WIFI]     = 'Connexion WiFi';
-        states[Connection.CELL_2G]  = 'Connexion cellulaire 2G';
-        states[Connection.CELL_3G]  = 'Connexion cellulaire 3G';
-        states[Connection.CELL_4G]  = 'Connexion cellulaire 4G';
+        states[Connection.CELL_2G]  = 'Connexion 2G';
+        states[Connection.CELL_3G]  = 'Connexion 3G';
+        states[Connection.CELL_4G]  = 'Connexion 4G';
         states[Connection.NONE]     = 'Pas de connexion réseau';
 
         alert('Connexion : ' + states[networkState]);
@@ -219,7 +219,7 @@ var imageData = document.getElementById("imageData").value;
 
 
 // camera.getPicture() callback function that provides an error message  
-function onCaptureError(message) { }
+function onCaptureError(message) {alert(message); }
 
 // Reads customized camera options from the settings_form and saves them to the settings object (cameraOptions storage)
 function applySettings() {
