@@ -63,7 +63,16 @@ function onDeviceReady() {
     $("#open_lib_button").bind ("click", onCapture);
     $("#open_alb_button").bind ("click", onCapture);
     $("#home_button").bind("click", removeTemporaryFiles); 
+    
+    document.addEventListener("online", onOnline, false);
+    document.addEventListener("offline", onOffline, false)
+
 }
+
+function onOnline() {alert("Connexion active");}
+
+function onOffline() {alert("!Connexion inactive");}
+
 
 // Overwrites the default behavior of the device back button
 function onBackPress(e) {
