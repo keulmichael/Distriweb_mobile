@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns = "http://www.w3.org/ns/widgets"
 xmlns:gap = "http://phonegap.com/ns/1.0"
-id = "mobi"
+id = "distriweb.mobi"
 version = "2.9.0">
 
 <name>Distriweb.mobi</name>
 
 <description>
-Distriweb.mobi
+Distriweb mobile .mobi
 </description>
 
 <author href="http://www.distriweb.mobi"
@@ -22,6 +22,7 @@ Michael Host
 <gap:platform name="blackberry" project="widgets"/>
 </gap:platforms>
 
+<icon src="moi.png" />
 
 
 <feature name="http://api.phonegap.com/1.0/battery"/>
