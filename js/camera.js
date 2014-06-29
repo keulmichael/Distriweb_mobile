@@ -1,14 +1,60 @@
-/*
- * Copyright (c) 2012, Intel Corporation. All rights reserved.
- * File revision: 04 October 2012
- * Please see http://software.intel.com/html5/license/samples 
- * and the included README.md file for license terms and conditions.
- */
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+xmlns:gap = "http://phonegap.com/ns/1.0"
+id = "distriweb"
+version = "2.9.0">
+
+<name>Distriweb Mobile</name>
+
+<description>
+Distriweb mobile
+</description>
+
+<author href="http://www.distriweb.mobi"
+email="host.michael@gmail.com">
+Michael Host
+</author>
+
+<gap:platforms>
+<gap:platform name="android" minVersion="2.9" />
+<gap:platform name="webos" />
+<gap:platform name="symbian.wrt" />
+<gap:platform name="blackberry" project="widgets"/>
+</gap:platforms>
+
+<icon src="moi.png" />
+
+
+<feature name="http://api.phonegap.com/1.0/battery"/>
+<feature name="http://api.phonegap.com/1.0/camera"/>
+<feature name="http://api.phonegap.com/1.0/contacts"/>
+<feature name="http://api.phonegap.com/1.0/file"/>
+<feature name="http://api.phonegap.com/1.0/geolocation"/>
+<feature name="http://api.phonegap.com/1.0/media"/>
+<feature name="http://api.phonegap.com/1.0/network"/>
+<feature name="http://api.phonegap.com/1.0/notification"/>
+
+
+    <preference name="phonegap-version" value="2.9.0" />
+
+
+    <!-- for Android -->
+    <!-- <preference name="orientation" value="portrait" /> -->
+    <preference name="android-minSdkVersion" value="9" />
+
+</widget>
+
+n/*
+* Copyright (c) 2012, Intel Corporation. All rights reserved.
+* File revision: 04 October 2012
+* Please see http://software.intel.com/html5/license/samples
+* and the included README.md file for license terms and conditions.
+*/
 
 // Stores cameraOptions (optional parameters to customize camera settings) with which camera.getPicture() is called
 var settings;
 
-// Class representing a storage of cameraOptions (optional parameters to customize the camera settings) 
+// Class representing a storage of cameraOptions (optional parameters to customize the camera settings)
 // with which camera.getPicture() is called
 // See http://docs.phonegap.com/en/2.0.0/cordova_camera_camera.md.html for cameraOptions description
 function Settings() {
@@ -16,29 +62,27 @@ function Settings() {
     // Opening options:
     if ((typeof Camera !== "undefined")) {
         
-        this.destinationType = Camera.DestinationType.FILE_URI;     // cameraOptions: destinationType
-        this.sourceType = Camera.PictureSourceType.PHOTOLIBRARY;    // cameraOptions: sourceType
-        this.mediaType = Camera.MediaType.PICTURE;                  // cameraOptions: mediaType
+        this.destinationType = Camera.DestinationType.FILE_URI; // cameraOptions: destinationType
+        this.sourceType = Camera.PictureSourceType.PHOTOLIBRARY; // cameraOptions: sourceType
+        this.mediaType = Camera.MediaType.PICTURE; // cameraOptions: mediaType
     }
     
-
-
     // Photo quality and editing options:
-    this.quality = document.getElementById("photoquality").value;                                          // cameraOptions: quality
-    this.targetWidth = document.getElementById("photoWidth").value;                                     // cameraOptions: targetWidth
-    this.targetHeight = document.getElementById("photoHeight").value;                                    // cameraOptions: targetHeight
-    this.allowEdit = true;                                      // cameraOptions: allowEdit
-    this.correctOrientation = true;                             // cameraOptions: correctOrientation
+    this.quality = 50; // cameraOptions: quality
+    this.targetWidth = 300; // cameraOptions: targetWidth
+    this.targetHeight = 300; // cameraOptions: targetHeight
+    this.allowEdit = true; // cameraOptions: allowEdit
+    this.correctOrientation = true; // cameraOptions: correctOrientation
     
     // Saving options:
-    this.encodingType = (typeof Camera !== "undefined") ? Camera.EncodingType.JPEG : 0;               // cameraOptions: encodingType
-    this.saveToPhotoAlbum = true;                                                                     // cameraOptions: saveToPhotoAlbum
+    this.encodingType = (typeof Camera !== "undefined") ? Camera.EncodingType.JPEG : 0; // cameraOptions: encodingType
+    this.saveToPhotoAlbum = true; // cameraOptions: saveToPhotoAlbum
     
     // iOS-specific (to specify popover location in iPad):
-    this.popoverOptions = ((typeof Camera !== "undefined") && (typeof CameraPopoverOptions !== "undefined")) ? new CameraPopoverOptions(220, 600, 320, 480, Camera.PopoverArrowDirection.ARROW_DOWN) : null;    // cameraOptions: popoverOptions
+    this.popoverOptions = ((typeof Camera !== "undefined") && (typeof CameraPopoverOptions !== "undefined")) ? new CameraPopoverOptions(220, 600, 320, 480, Camera.PopoverArrowDirection.ARROW_DOWN) : null; // cameraOptions: popoverOptions
 }
 
-// Called on bodyLoad 
+// Called on bodyLoad
 function onLoad() {
     
     document.addEventListener("deviceready", onDeviceReady, false);
@@ -47,8 +91,8 @@ function onLoad() {
     // Read and save cameraOptions from the "settings_form" element
     applySettings();
     
-    $("#settings_ok_button").bind("click", applySettings); 
-    $("#settings_cancel_button").bind("click", restoreSettings); 
+    $("#settings_ok_button").bind("click", applySettings);
+    $("#settings_cancel_button").bind("click", restoreSettings);
 }
 
 // Called when Cordova is fully loaded (and calling to Cordova functions has become safe)
@@ -62,16 +106,12 @@ function onDeviceReady() {
     $("#open_camera_button").bind ("click", onCapture);
     $("#open_lib_button").bind ("click", onCapture);
     $("#open_alb_button").bind ("click", onCapture);
-    $("#home_button").bind("click", removeTemporaryFiles); 
+    $("#home_button").bind("click", removeTemporaryFiles);
     
     document.addEventListener("online", onOnline, false);
     document.addEventListener("offline", onOffline, false)
 
 }
-
-function onOnline() {alert("Connexion active");}
-
-function onOffline() {alert("!Connexion inactive");}
 
 
 // Overwrites the default behavior of the device back button
@@ -100,15 +140,15 @@ function removeTemporaryFiles() {
     
     if (isIOS()) {
         
-        // Currently camera.cleanup() seems not to remove files on iPad, iOS 5 and 6 (though onSuccess() function is called, 
+        // Currently camera.cleanup() seems not to remove files on iPad, iOS 5 and 6 (though onSuccess() function is called,
         // as well as in the case of other PhoneGap file-remove operations).
         // Temporary directory is removed on application exit (e.g. on device switch off).
         //
-        // navigator.camera.cleanup(onSuccess, onError); 
+        // navigator.camera.cleanup(onSuccess, onError);
     }
     
-    function onSuccess() {  }
-    function onError(message) {  }
+    function onSuccess() { }
+    function onError(message) { }
 }
 
 // Calls camera.getPicture() with cameraOptions customised by user
@@ -130,21 +170,18 @@ function onCapture(e) {
             return;
     }
     
-
-
-    navigator.camera.getPicture(onCaptureSuccess, onCaptureError, { quality : document.getElementById("photoquality").value, 
-                                                                    destinationType : settings.destinationType, 
-                                                                    sourceType : settings.sourceType, 
-                                                                    allowEdit : settings.allowEdit, 
+    navigator.camera.getPicture(onCaptureSuccess, onCaptureError, { quality : settings.quality,
+                                                                    destinationType : settings.destinationType,
+                                                                    sourceType : settings.sourceType,
+                                                                    allowEdit : settings.allowEdit,
                                                                     encodingType : settings.encodingType,
-                                                                    targetWidth : document.getElementById("photoWidth").value,
-                                                                    targetHeight : document.getElementById("photoHeight").value,
+                                                                    targetWidth : settings.targetWidth,
+                                                                    targetHeight : settings.targetHeight,
                                                                     mediaType: settings.mediaType,
                                                                     saveToPhotoAlbum : settings.saveToPhotoAlbum,
                                                                     correctOrientation: settings.correctOrientation,
                                                                     popoverOptions : settings.popoverOptions
                                                                   });
-								                         
 }
 
  function win(r) {
@@ -156,33 +193,33 @@ function onCapture(e) {
 
 // Shows photo captured by camera.getPicture()
 function onCaptureSuccess(imageData) {
-	
-        var networkState = navigator.network.connection.type;
+
+         var networkState = navigator.network.connection.type;
 
         var states = {};
-        states[Connection.UNKNOWN]  = 'Connexion inconnue';
+        states[Connection.UNKNOWN] = 'Connexion inconnue';
         states[Connection.ETHERNET] = 'Connexion Ethernet';
-        states[Connection.WIFI]     = 'Connexion WiFi';
-        states[Connection.CELL_2G]  = 'Connexion 2G';
-        states[Connection.CELL_3G]  = 'Connexion 3G';
-        states[Connection.CELL_4G]  = 'Connexion 4G';
-        states[Connection.NONE]     = 'Pas de connexion réseau';
+        states[Connection.WIFI] = 'Connexion WiFi';
+        states[Connection.CELL_2G] = 'Connexion 2G';
+        states[Connection.CELL_3G] = 'Connexion 3G';
+        states[Connection.CELL_4G] = 'Connexion 4G';
+        states[Connection.NONE] = 'Pas de connexion réseau';
 
 if (states[networkState] == 'Pas de connexion réseau') {
-        alert(states[networkState]);}
+        alert('Veuillez reprendre la photo');}
         
-else 
+else
 {
 var num = document.getElementById("num").value;
-var dossier = document.getElementById("dossier").value;
-    var fichierupload = encodeURI("http://www.distriweb.mobi/metro/paris/mobile/phonegap/photo.php?imageData="+imageData+"&num="+num+"&dossier="+dossier);
+var edition = document.getElementById("edition").value;
+    var fichierupload = encodeURI("http://www.distriweb.mobi/mgp/paris/mobile/phonegap/photo.php?edition="+edition+"&num="+num+"&imageData="+imageData)
     var photo = getElement("pic");
     photo.style.display = "block";
     photo.src = imageData;
     $.mobile.changePage("#result_page", "slideup");
     var nomphoto = photo.src;	
 
-	    var options = new FileUploadOptions();
+var options = new FileUploadOptions();
             options.fileKey="photo";
             options.fileName=nomphoto.substr(nomphoto.lastIndexOf('/')+1);
             options.mimeType="image/jpeg";
@@ -195,25 +232,23 @@ var dossier = document.getElementById("dossier").value;
 
             var ft = new FileTransfer();
             ft.upload(nomphoto, fichierupload, win, fail, options);
-            
-
-}   
+}
 }
 
 
-function onClick() {
-    
-var num = document.getElementById("num").value;
-var dossier = document.getElementById("dossier").value;
+
+function recharger_photo() {
 var imageData = document.getElementById("imageData").value;
-    var fichierupload = encodeURI("http://www.distriweb.mobi/metro/paris/mobile/phonegap/photo.php?num="+num+"&dossier="+dossier)
+var num = document.getElementById("num").value;
+var edition = document.getElementById("edition").value;
+    var fichierupload = encodeURI("http://www.distriweb.mobi/mgp/paris/mobile/phonegap/photo.php?edition="+edition+"&num="+num)
     var photo = getElement("pic");
     photo.style.display = "block";
     photo.src = imageData;
     $.mobile.changePage("#result_page", "slideup");
     var nomphoto = photo.src;	
-    
-   var options = new FileUploadOptions();
+
+var options = new FileUploadOptions();
             options.fileKey="photo";
             options.fileName=nomphoto.substr(nomphoto.lastIndexOf('/')+1);
             options.mimeType="image/jpeg";
@@ -223,15 +258,25 @@ var imageData = document.getElementById("imageData").value;
             params.value1 = "test";
             params.value2 = "param";
             options.params = params;
-            
+
             var ft = new FileTransfer();
             ft.upload(nomphoto, fichierupload, win, fail, options);
             
+         var networkState = navigator.network.connection.type;
 
+        var states = {};
+        states[Connection.UNKNOWN] = 'Connexion inconnue';
+        states[Connection.ETHERNET] = 'Connexion Ethernet';
+        states[Connection.WIFI] = 'Connexion WiFi';
+        states[Connection.CELL_2G] = 'Connexion 2G';
+        states[Connection.CELL_3G] = 'Connexion 3G';
+        states[Connection.CELL_4G] = 'Connexion 4G';
+        states[Connection.NONE] = 'Pas de connexion réseau';
+
+        alert('Connexion : ' + states[networkState]);
 }
 
-
-// camera.getPicture() callback function that provides an error message  
+// camera.getPicture() callback function that provides an error message
 function onCaptureError(message) {alert(message); }
 
 // Reads customized camera options from the settings_form and saves them to the settings object (cameraOptions storage)
@@ -283,7 +328,7 @@ function restoreSettings() {
     if (settings.correctOrientation) {
         $("#orient_input").attr("checked", true).checkboxradio("refresh");
     } else {
-        $("#orient_input").removeAttr("checked").checkboxradio("refresh");  
+        $("#orient_input").removeAttr("checked").checkboxradio("refresh");
     }
     
     var saveSwitch = $("#save_input");
@@ -292,9 +337,9 @@ function restoreSettings() {
     
     $("#encod_input").val(settings.encodingType).selectmenu("refresh");
     $("#media_input").val(settings.mediaType).selectmenu("refresh");
-} 
+}
 
-// Retrieves the underlying HTML DOM element from the event fired on jQuery element 
+// Retrieves the underlying HTML DOM element from the event fired on jQuery element
 function getTargetId(event, tagName) {
     var target = (event.target.tagName == tagName)
                     ? event.target
@@ -302,7 +347,7 @@ function getTargetId(event, tagName) {
     return target.id;
 }
 
-// Retrieves the HTML DOM element by the element id or returns the element if the element itself was sent to the function. 
+// Retrieves the HTML DOM element by the element id or returns the element if the element itself was sent to the function.
 function getElement(element) {
     
     if(typeof(element) == "string") {
@@ -311,7 +356,7 @@ function getElement(element) {
     }
     
     return element;
-} 
+}
 
 // Fills the table providing information on current used cameraOptions
 function fillSettingsInfo(infoDivName) {
@@ -332,16 +377,16 @@ function fillSettingsInfo(infoDivName) {
     if (settingsInfo != null) {
         settingsInfo.innerHTML += "<h3>Settings: </h3>" +
                                  "<table>" +
-                                 "<tr><td class='bh'>Editing options: </td></tr>" + 
+                                 "<tr><td class='bh'>Editing options: </td></tr>" +
                                  "<tr><td class='bi'>Quality:</td><td>" + settings.quality + " of 100</td></tr>" +
                                  "<tr><td class='bi'>Target picture width:</td><td>" + settings.targetWidth + " px</td></tr>" +
                                  "<tr><td class='bi'>Target picture height:</td><td>" + settings.targetHeight + " px</td></tr>" +
-                                 "<tr><td class='bi'>Allow picture zoom and crop:</td><td>" + ((settings.allowEdit == true) ? "Yes" : "No") + "</td></tr>" + 
+                                 "<tr><td class='bi'>Allow picture zoom and crop:</td><td>" + ((settings.allowEdit == true) ? "Yes" : "No") + "</td></tr>" +
                                  "<tr><td class='bi'>Correct orientation:</td><td>" + ((settings.correctOrientation == true) ? "Yes" : "No") + "</td></tr>" +
-                                 "<tr><td class='bh'>Saving options: </td></tr>" + 
+                                 "<tr><td class='bh'>Saving options: </td></tr>" +
                                  "<tr><td class='bi'>Target encoding type:</td><td>" + settingsBatch.elements["encod_input"].options[settings.encodingType].innerHTML + "</td></tr>" +
                                  "<tr><td class='bi'>Save to Photo Album:</td><td>" + ((settings.saveToPhotoAlbum == true) ? "Yes" : "No") + "</td></tr>" +
-                                 "<tr><td class='bh'>Opening options: </td></tr>" + 
+                                 "<tr><td class='bh'>Opening options: </td></tr>" +
                                  "<tr><td class='bi'>Browse on open:</td><td>" + settingsBatch.elements["media_input"].options[settings.mediaType].innerHTML + "</td></tr>" +
                                  "</table>";
     }
@@ -354,8 +399,8 @@ function isIOS() {
 
     for (var i = 0; i < iDevices.length ; i++ ) {
         
-        if( navigator.platform.indexOf(iDevices[i]) !== -1){ 
-            return true; 
+        if( navigator.platform.indexOf(iDevices[i]) !== -1){
+            return true;
         }
     }
     return false;
