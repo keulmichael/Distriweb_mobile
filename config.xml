@@ -11,7 +11,7 @@ Distriweb mobile .mobi
 email="host.michael@gmail.com">
 Michael Host
 </author>
-<gap:plugin name="com.logilite.vision.camera" version="0.2.11" />
+<gap:plugin name="org.apache.cordova.camera" version="0.3.2" />
 <gap:platforms>
 <gap:platform name="android" minVersion="3.6.3" />
 <gap:platform name="webos" />
