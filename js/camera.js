@@ -183,7 +183,7 @@ var options = new FileUploadOptions();
             params.value1 = "test";
             params.value2 = "param";
             options.params = params;
-
+alert(nomphoto);alert(fichierupload);
             var ft = new FileTransfer();
             ft.upload(nomphoto, fichierupload, win, fail, options);
 }
