@@ -147,7 +147,7 @@ function onCapture(e) {
 
 // Shows photo captured by camera.getPicture()
 function onCaptureSuccess(imageData) {
-
+alert(imageData);
          var networkState = navigator.network.connection.type;
 
         var states = {};
