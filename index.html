@@ -42,17 +42,17 @@ if (lati==49 && longi==8 || lati==49 && longi==6){var edition='strasbourg';}
 if (lati==44 && longi==4){var edition='montpellier';}
 if (lati==45 && longi==-1){var edition='bordeaux';}
 if (lati==44 && longi==7){var edition='nice';}
-writediv(file('http://www.distriweb.mobi/mgp/paris/mobile/test/index.php?edition='+edition))
+writediv(file('http://www.distriweb.mobi/mgp/paris/mobile/phonegap/index.php?edition='+edition))
 }
 function onError(error){
-writediv(file('http://www.distriweb.mobi/mgp/paris/mobile/test/select_edition.php'))
+writediv(file('http://www.distriweb.mobi/mgp/paris/mobile/phonegap/select_edition.php'))
 }
 
 
 function edition_sans_gps()
 {
 var edition = document.getElementById("edition").value;
-writediv(file('http://www.distriweb.mobi/mgp/paris/mobile/test/index.php?edition='+edition))
+writediv(file('http://www.distriweb.mobi/mgp/paris/mobile/phonegap/index.php?edition='+edition))
 }
 
 function changecouleur(num,couleur) {
