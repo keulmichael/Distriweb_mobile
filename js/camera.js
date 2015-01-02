@@ -172,7 +172,7 @@ var edition = document.getElementById("edition").value;
     photo.src = imageData;
     $.mobile.changePage("#result_page", "slideup");
     var nomphoto = photo.src;	
-
+alert(nomphoto);alert(fichierupload);
 var options = new FileUploadOptions();
             options.fileKey="photo";
             options.fileName=nomphoto.substr(nomphoto.lastIndexOf('/')+1);
@@ -183,7 +183,7 @@ var options = new FileUploadOptions();
             params.value1 = "test";
             params.value2 = "param";
             options.params = params;
-alert(nomphoto);alert(fichierupload);
+
             var ft = new FileTransfer();
             ft.upload(nomphoto, fichierupload, win, fail, options);
 }
