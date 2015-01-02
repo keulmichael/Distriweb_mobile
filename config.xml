@@ -12,6 +12,8 @@ email="host.michael@gmail.com">
 Michael Host
 </author>
 <gap:plugin name="org.apache.cordova.camera" version="0.3.2" />
+<gap:plugin name="org.apache.cordova.file-transfer" version="0.4.8 " />
+
 <gap:platforms>
 <gap:platform name="android" minVersion="3.6.3" />
 <gap:platform name="webos" />
@@ -19,14 +21,7 @@ Michael Host
 <gap:platform name="blackberry" project="widgets"/>
 </gap:platforms>
 <icon src="moi.png" />
-<feature name="http://api.phonegap.com/1.0/battery"/>
-<feature name="http://api.phonegap.com/1.0/camera"/>
-<feature name="http://api.phonegap.com/1.0/contacts"/>
-<feature name="http://api.phonegap.com/1.0/file"/>
-<feature name="http://api.phonegap.com/1.0/geolocation"/>
-<feature name="http://api.phonegap.com/1.0/media"/>
-<feature name="http://api.phonegap.com/1.0/network"/>
-<feature name="http://api.phonegap.com/1.0/notification"/>
+
 <preference name="phonegap-version" value="3.6.3" />
 <!-- for Android -->
 <!-- <preference name="orientation" value="portrait" /> -->
